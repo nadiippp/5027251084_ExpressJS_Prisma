@@ -20,43 +20,6 @@ Lanjutan tugas API Produk menggunakan **Express.js**, **Prisma ORM**, dan **Post
 └── prisma.config.js           # Konfigurasi Prisma 7
 ```
 
-## Cara Menjalankan Project
-
-1. **Konfigurasi Database (`.env`)**
-   Pastikan PostgreSQL berjalan dan sesuaikan `DATABASE_URL` di file `.env`:
-   ```env
-   DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/product_db?schema=public"
-   PORT=3000
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Jalankan Migration & Generate Prisma Client**
-   ```bash
-   npx prisma migrate dev --name init
-   npx prisma generate
-   ```
-
-4. **(Opsional) Isi Data Awal (Seed)**
-   ```bash
-   npm run seed
-   ```
-
-5. **Jalankan Server Express**
-   ```bash
-   npm start
-   ```
-
-6. **(Opsional) Buka Prisma Studio untuk Melihat Isi Database (Before - After)**
-   ```bash
-   npx prisma studio
-   ```
-
----
-
 ## Daftar Endpoint & Skenario Pengujian (Postman / Bruno / Hoppscotch)
 
 ### 1. GET `/products` — Menampilkan Seluruh Data
@@ -65,7 +28,7 @@ Lanjutan tugas API Produk menggunakan **Express.js**, **Prisma ORM**, dan **Post
 - **Response (`200 OK`):**
   ```json
   [
-    {
+    {s
       "id": 1,
       "name": "Buku",
       "price": 15000,
