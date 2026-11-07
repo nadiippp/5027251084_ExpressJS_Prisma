@@ -1,0 +1,217 @@
+{
+  "info": {
+    "name": "Tugas Express Prisma - Product API (5027251084)",
+    "description": "Koleksi pengujian endpoint CRUD Product API dengan Express & Prisma PostgreSQL (Success & Validation Error Scenarios)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET - Ambil Seluruh Produk (Success 200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "2. GET by ID - Ambil Produk ID 1 (Success 200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/products/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products", "1"]
+        }
+      }
+    },
+    {
+      "name": "3. GET by ID - Produk Tidak Ditemukan (Error 404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/products/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products", "999"]
+        }
+      }
+    },
+    {
+      "name": "4. POST - Tambah Produk Baru (Success 201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Spidol\",\n  \"price\": 8000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "5. POST - Validasi Gagal: Price Kosong (Error 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Spidol\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "6. POST - Validasi Gagal: Price Negatif (Error 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Spidol\",\n  \"price\": -5000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "7. PUT - Update Produk dengan ID di Body (Success 200)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"name\": \"Buku Tulis Kampus\",\n  \"price\": 18000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "8. PUT - Validasi Gagal: Tanpa ID (Error 400)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Buku Tulis Kampus\",\n  \"price\": 18000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "9. PUT - Produk Tidak Ditemukan (Error 404)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 999,\n  \"name\": \"Buku Tulis Kampus\",\n  \"price\": 18000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "10. DELETE - Hapus Produk Berdasarkan ID (Success 200)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/products/3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products", "3"]
+        }
+      }
+    },
+    {
+      "name": "11. DELETE - Produk Tidak Ditemukan (Error 404)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/products/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["products", "999"]
+        }
+      }
+    }
+  ]
+}

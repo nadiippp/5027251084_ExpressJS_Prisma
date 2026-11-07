@@ -1,0 +1,25 @@
+{
+  "name": "product-api-prisma",
+  "version": "1.0.0",
+  "description": "Tugas Pemrograman Web - ExpressJS & Prisma PostgreSQL (5027251084)",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "seed": "node prisma/seed.js",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:studio": "npx prisma studio"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.0.0",
+    "@prisma/client": "^7.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "prisma": "^7.0.0"
+  }
+}
